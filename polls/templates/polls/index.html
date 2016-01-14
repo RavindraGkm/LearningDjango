@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+{% if latest_questions %}
+<ul>
+    {% for que in latest_questions %}
+    <li><a href="/polls/{{ que.id }}">{{ que.question_text }}</a></li>
+    {% endfor %}
+    {% else %}
+    <p>No polls are available</p>
+    {% endif %}
+</ul>
+</body>
+</html>
