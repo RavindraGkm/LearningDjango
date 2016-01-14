@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from .models import Articles
 from django.shortcuts import render
 
@@ -6,6 +7,10 @@ def year_archive(request, year):
     a_list = Articles.objects.filter(pub_date__year=year)
     context = {'year': year, 'article_list': a_list}
     return render(request, 'learning/year_archive.html', context)
+
+
+def index(request):
+    return HttpResponse("Jai mata di")
 
 # from django.http import HttpResponse
 # from .models import Reporter
